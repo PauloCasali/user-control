@@ -50,4 +50,4 @@ def criar_usuario(name: str, email: str, password_hash: str):
         return {"ERRO_REAL": str(e)}
 
 
-print("✅ main.py carregado - usando apenas 'users'")
+print("✅ main.py carregado - usando apenas 'users  '")
