@@ -1,11 +1,20 @@
 from fastapi import FastAPI
 from sqlalchemy import create_engine, text
+from fastapi.middleware.cors import CORSMiddleware
 
-DATABASE_URL = "postgresql+psycopg2://postgres:postgres@localhost:5432/projeto1"
+DATABASE_URL = "postgresql+psycopg2://postgres:postgres@db:5432/projeto1"
 
 engine = create_engine(DATABASE_URL)
 
 app = FastAPI(title="API Usuários - Versão Corrigida")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.get("/status")
