@@ -2,7 +2,9 @@ from fastapi import FastAPI
 from sqlalchemy import create_engine, text
 from fastapi.middleware.cors import CORSMiddleware
 
-DATABASE_URL = "postgresql+psycopg2://postgres:postgres@db:5432/projeto1"
+#DATABASE_URL = "postgresql+psycopg2://postgres:postgres@db:5432/projeto1"#
+
+DATABASE_URL = "postgresql+psycopg2://postgres:postgres@localhost:5432/projeto1"
 
 engine = create_engine(DATABASE_URL)
 
